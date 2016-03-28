@@ -1,19 +1,39 @@
 import './entry.scss';
 import React from 'react';
+import KanbanBoard from './KanbanBoard';
 import ReactDOM from 'react-dom';
 
-class Hello extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      someState: null,
-    };
-  }
-  render() {
-    return (
-      <h1 className="Hello__h1">Hello World</h1>
-    );
-  }
-}
+const cardsList = [
+  {
+    id: 1,
+    title: 'Read the Book',
+    description: 'I should read the whole book',
+    status: 'in-progress',
+    tasks: [],
+  },
+  {
+    id: 2,
+    title: 'Write some code',
+    description: 'Code along with the samples in the book',
+    status: 'todo',
+    tasks: [
+      {
+        id: 1,
+        name: 'ContactList Example',
+        done: true,
+      },
+      {
+        id: 2,
+        name: 'Kanban Example',
+        done: false,
+      },
+      {
+        id: 3,
+        name: 'My own experiments',
+        done: false,
+      },
+    ],
+  },
+];
 
-ReactDOM.render(<Hello />, document.getElementById('app'));
+ReactDOM.render(<KanbanBoard cards={cardsList} />, document.getElementById('app'));
