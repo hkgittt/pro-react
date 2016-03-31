@@ -22,7 +22,7 @@ const KanbanBoard = (props) => (
 );
 
 KanbanBoard.propTypes = {
-  cards: React.PropTypes.array,
+  cards: React.PropTypes.arrayOf(React.PropTypes.object),
 };
 
 export default KanbanBoard;
