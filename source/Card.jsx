@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import CheckList from './CheckList';
 
 const titlePropType = (props, propName, componentName) => {
@@ -33,6 +34,7 @@ class Card extends React.Component {
         <div className="card__details">
           {this.props.description}
           <CheckList cardId={this.props.id}
+            taskCallbacks={this.props.taskCallbacks}
             tasks={this.props.tasks}
           />
         </div>
@@ -67,8 +69,9 @@ Card.propTypes = {
   title: titlePropType,
   description: React.PropTypes.string,
   id: React.PropTypes.number,
-  tasks: React.PropTypes.arrayOf(React.PropTypes.object),
+  tasks: React.PropTypes.object,
   color: React.PropTypes.string,
+  taskCallbacks: React.PropTypes.object,
 };
 
 export default Card;

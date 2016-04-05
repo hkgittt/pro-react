@@ -5,6 +5,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: './public/bundle.js',
+    sourceMapFilename: './bundle.map',
   },
   module: {
     loaders: [
@@ -16,4 +17,5 @@ module.exports = {
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
+  devtool: '#source-map',
 };
